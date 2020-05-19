@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://MainScene.gd" type="Script" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://DialogBox_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://DialogBox_3.gd" type="Script" id=6]
+[ext_resource path="res://DialogBox_4.gd" type="Script" id=7]
+[ext_resource path="res://DialogBox_5.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 208 )
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 11, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 9, 11, 0, 10, 11, 0, 11, 11, 0, 12, 11, 0, 13, 11, 0, 14, 11, 0, 15, 11, 0, 16, 11, 0, 17, 11, 0, 18, 11, 0, 19, 11, 0, 20, 11, 0, 21, 11, 0, 22, 11, 0, 23, 11, 0, 24, 11, 0, 25, 11, 0, 26, 11, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 458752, 10, 0, 458753, 10, 0, 458754, 10, 0, 458755, 10, 0, 458756, 10, 0, 458757, 10, 0, 458758, 10, 0, 458759, 10, 0, 458760, 10, 0, 458761, 10, 0, 458762, 10, 0, 458763, 10, 0, 458764, 10, 0, 458765, 10, 0, 458766, 10, 0, 458767, 10, 0, 458768, 10, 0, 458769, 10, 0, 458770, 10, 0, 458771, 10, 0, 458772, 10, 0, 458773, 10, 0, 458774, 10, 0, 458775, 10, 0, 458776, 10, 0, 458777, 10, 0, 458778, 10, 0, 524288, 11, 0, 524289, 11, 0, 524290, 11, 0, 524291, 11, 0, 524292, 11, 0, 524293, 11, 0, 524294, 11, 0, 524295, 11, 0, 524296, 11, 0, 524297, 11, 0, 524298, 11, 0, 524299, 11, 0, 524300, 11, 0, 524301, 11, 0, 524302, 11, 0, 524303, 11, 0, 524304, 11, 0, 524305, 11, 0, 524306, 11, 0, 524307, 11, 0, 524308, 11, 0, 524309, 11, 0, 524310, 11, 0, 524311, 11, 0, 524312, 11, 0, 524313, 11, 0, 524314, 11, 0, 589824, 11, 0, 589825, 11, 0, 589826, 11, 0, 589827, 11, 0, 589828, 11, 0, 589829, 11, 0, 589830, 11, 0, 589831, 11, 0, 589832, 11, 0, 589833, 11, 0, 589834, 11, 0, 589835, 11, 0, 589836, 11, 0, 589837, 11, 0, 589838, 11, 0, 589839, 11, 0, 589840, 11, 0, 589841, 11, 0, 589842, 11, 0, 589843, 11, 0, 589844, 11, 0, 589845, 11, 0, 589846, 11, 0, 589847, 11, 0, 589848, 11, 0, 589849, 11, 0, 589850, 11, 0 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 192, 416 )
+scale = Vector2( 2, 2 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 64, -56 )
+current = true
+limit_left = 0
+limit_right = 1728
+
+[node name="InvisibleWall" type="StaticBody2D" parent="."]
+position = Vector2( 0, 48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="InvisibleWall"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -32, 272 )
+scale = Vector2( 1, 6.5 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall"]
+position = Vector2( -32, 272 )
+shape = SubResource( 1 )
+
+[node name="InvisibleWall2" type="StaticBody2D" parent="."]
+position = Vector2( 1792, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="InvisibleWall2"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -32, 272 )
+scale = Vector2( 1, 6.5 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall2"]
+position = Vector2( -32, 272 )
+shape = SubResource( 1 )
+
+[node name="DialogTrigger_2" parent="." instance=ExtResource( 5 )]
+
+[node name="DialogTrigger_3" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 6 )
+
+[node name="Area2D" parent="DialogTrigger_3" index="0"]
+position = Vector2( 432, 0 )
+
+[node name="DialogBox_2" parent="DialogTrigger_3" index="1"]
+position = Vector2( 224, -352 )
+
+[node name="DialogTrigger_4" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 7 )
+
+[node name="Area2D" parent="DialogTrigger_4" index="0"]
+position = Vector2( 832, 0 )
+
+[node name="DialogBox_2" parent="DialogTrigger_4" index="1"]
+position = Vector2( 624, -352 )
+
+[node name="DialogTrigger_5" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 8 )
+
+[node name="Area2D" parent="DialogTrigger_5" index="0"]
+position = Vector2( 1200, 0 )
+
+[node name="DialogBox_2" parent="DialogTrigger_5" index="1"]
+position = Vector2( 704, -352 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[editable path="DialogTrigger_2"]
+
+[editable path="DialogTrigger_3"]
+
+[editable path="DialogTrigger_4"]
+
+[editable path="DialogTrigger_5"]
