@@ -1,5 +1,7 @@
 extends Node
-var dialog = ["You decided to pursue this further?", "Good luck.", "You'll come running back. Trust me."]
+var dialog = [
+	"Just a friendly reminder to jump you press SPACEBAR or A. To move, you use the arrow keys or control pad. ",
+	"Easy enough, right?"]
 var triggered = true   #Used to check if dialog has been triggered
 
 # Declare member variables here. Examples:
@@ -17,8 +19,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $DialogBox.visible == false:
-		get_tree().quit()
+		var t = Timer.new()
+		t.set_wait_time(1)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+		get_tree().change_scene("res://MainScene.tscn")
 		
 	pass
 
 
+
+func _on_Timer_timeout():
+	pass # Replace with function body.

@@ -5,15 +5,20 @@ extends Node2D
 onready var TriggerArray = [$DialogTrigger_2/DialogBox_2.visible,$DialogTrigger_3/DialogBox_2.visible]
 var index = 0
 var timer
+var dialog = ["I see you decided to go for it", "Good luck."]
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$DialogBox.visible = true
+	set_process_input(true)
+	$DialogBox.page = 0
+	$DialogBox._load_dialog(dialog)# Replace with function body.
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 
-	if ($DialogTrigger_2/DialogBox_2.visible || $DialogTrigger_3/DialogBox_2.visible 
+	if ($DialogBox.visible || $DialogTrigger_2/DialogBox_2.visible || $DialogTrigger_3/DialogBox_2.visible 
 	|| $DialogTrigger_4/DialogBox_2.visible || $DialogTrigger_5/DialogBox_2.visible):
 		$KinematicBody2D._set_isMoving(false)
 	else:

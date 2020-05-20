@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://type_effect.wav" type="AudioStream" id=1]
+[ext_resource path="res://DialogBoxScript.gd" type="Script" id=2]
+
+[node name="DialogBox" type="Polygon2D"]
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+polygon = PoolVector2Array( 128, 128, 896, 128, 896, 256, 128, 256 )
+script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 144.0
+margin_top = 144.0
+margin_right = 880.0
+margin_bottom = 240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -15.146
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

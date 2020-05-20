@@ -48,10 +48,10 @@ grow_vertical = 0
 rect_min_size = Vector2( 360, 100 )
 
 [node name="Label" parent="Menu/CenterRow/Buttons/StartButton" index="0"]
-margin_left = 96.0
-margin_top = -11.0
-margin_right = 256.0
-margin_bottom = 80.0
+margin_left = 100.0
+margin_top = 1.0
+margin_right = 272.0
+margin_bottom = 92.0
 text = "START"
 
 [node name="QuitButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
@@ -63,10 +63,10 @@ rect_min_size = Vector2( 360, 100 )
 align = 0
 
 [node name="Label" parent="Menu/CenterRow/Buttons/QuitButton" index="0"]
-margin_left = 112.0
-margin_top = -3.0
-margin_right = 253.0
-margin_bottom = 88.0
+margin_left = 116.0
+margin_top = -7.0
+margin_right = 257.0
+margin_bottom = 84.0
 text = "QUIT"
 [connection signal="pressed" from="Menu/CenterRow/Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
