@@ -27,3 +27,9 @@ func _process(delta):
 	pass
 	
 
+
+
+
+
+func _on_EndTrigger_body_entered(body):
+	get_tree().change_scene("res://End Scene.tscn")

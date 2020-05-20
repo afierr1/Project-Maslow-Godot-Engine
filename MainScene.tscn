@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://MainScene.gd" type="Script" id=2]
@@ -11,6 +11,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 208 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 144 )
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 2 )
@@ -31,7 +34,7 @@ limit_left = 0
 limit_right = 1728
 
 [node name="InvisibleWall" type="StaticBody2D" parent="."]
-position = Vector2( 0, 48 )
+position = Vector2( 0, 64 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -47,7 +50,7 @@ position = Vector2( -32, 272 )
 shape = SubResource( 1 )
 
 [node name="InvisibleWall2" type="StaticBody2D" parent="."]
-position = Vector2( 1792, 16 )
+position = Vector2( 1792, 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -92,6 +95,22 @@ position = Vector2( 1200, 0 )
 position = Vector2( 704, -352 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="EndTrigger" type="Area2D" parent="."]
+position = Vector2( 1536, 352 )
+
+[node name="EndCollision" type="CollisionShape2D" parent="EndTrigger"]
+light_mask = 0
+position = Vector2( 144, -64 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="EndTrigger"]
+modulate = Color( 0, 0, 0, 1 )
+light_mask = 0
+position = Vector2( 1696, 288 )
+scale = Vector2( 1, 4.5 )
+texture = ExtResource( 4 )
+[connection signal="body_entered" from="EndTrigger" to="." method="_on_EndTrigger_body_entered"]
 
 [editable path="DialogTrigger_2"]
 
