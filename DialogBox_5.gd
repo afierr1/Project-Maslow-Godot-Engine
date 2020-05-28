@@ -1,11 +1,7 @@
 extends Node
 var dialog = [
-	"That slave deserved to die. Everyone beneath you deserves to die.",
-	"Look, your family worked hard to get where they're at.",
-	"They deserve to be at the top of the food chain. These servants did this to themselves. They didn't work as hard as your family so they must suffer. ",
-	"This was a horrible decision.",
-	"Come home.",
-	"Please?"]
+	"No, it is a grave."
+]
 var triggered = true   #Used to check if dialog has been triggered
 
 # Declare member variables here. Examples:

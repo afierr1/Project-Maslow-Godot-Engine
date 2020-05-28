@@ -1,7 +1,7 @@
 extends Node
 var dialog = [
-	"Just a friendly reminder to jump you press SPACEBAR or A. To move, you use the arrow keys or control pad. ",
-	"Easy enough, right?"]
+	"Just a friendly reminder to jump you press SPACEBAR or Y. To move, you use the arrow keys or control pad. ",
+	"To interact with items or people, you press A or ENTER."]
 var triggered = true   #Used to check if dialog has been triggered
 
 # Declare member variables here. Examples:

@@ -22,13 +22,14 @@ func _load_dialog(dialog):
 #	pass
 func _input(event):
 	if (Input.is_action_just_pressed("ui_accept")):
-		if $RichTextLabel.visible_characters > $RichTextLabel.get_total_character_count():
-			if (page + 1 == inputDialog.size()):
-				visible = false				
+		#if visible characters is greater than actual number of characters
+		if $RichTextLabel.visible_characters > $RichTextLabel.get_total_character_count():			
 			if page < inputDialog.size()-1:
-				page+=1
-				$RichTextLabel.bbcode_text = inputDialog[page]
+				$RichTextLabel.bbcode_text = inputDialog[page+1]
 				$RichTextLabel.visible_characters = 0
+			else:
+				visible = false
+			page+=1
 		else:
 			$RichTextLabel.visible_characters = $RichTextLabel.get_total_character_count()
 			

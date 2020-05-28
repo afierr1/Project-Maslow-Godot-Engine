@@ -1,7 +1,8 @@
 extends Node
 var dialog = [
-	"Enjoy the lavish parties your family hosts. Why not go back to sleep on your own comfortable bed with a silk blanket.", 
-	"BETTER THAN SLEEPING ON ROCKS."
+	"Enjoy the lavish parties the nobles host? Why not go back to sleep on your pile of garbage?", 
+	"At least you have something you can call your own.",
+	"AT LEAST A GARBAGE PILE IS BETTER THAN A GRAVE."
 	]
 var triggered = true   #Used to check if dialog has been triggered
 

@@ -13,6 +13,7 @@ var x_val
 
 func _process(delta):
 	
+	
 	if (isMoving):
 		_character_movement()
 	else:
@@ -32,20 +33,25 @@ func _character_movement():
 	
 		
 	if Input.is_action_pressed("ui_right"):
+		$RayCast2D.rotation_degrees = -90
 		motion.x = SPEED
 		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("walk")
+		if !Input.is_action_pressed("ui_select"):
+			$AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("ui_left"):
+		$RayCast2D.rotation_degrees = 90
 		motion.x = -SPEED
 		$AnimatedSprite.flip_h = true 
-		$AnimatedSprite.play("walk")
+		if !Input.is_action_pressed("ui_select"):
+			$AnimatedSprite.play("walk")
 	else:
 		motion.x = 0
-		$AnimatedSprite.play("idle")
+		if !Input.is_action_pressed("ui_select"):
+			$AnimatedSprite.play("idle")
 
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_select"):
-			$AnimatedSprite.stop()
+			$AnimatedSprite.play("jump")
 			motion.y = JUMP_HEIGHT 
 			if Input.is_action_pressed("ui_right"):
 				motion.x += SPEED

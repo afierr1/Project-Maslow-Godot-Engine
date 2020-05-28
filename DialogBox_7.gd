@@ -1,10 +1,13 @@
 extends Node
 var dialog = [
-	"Well...isn't this quite the predicament?", 
-	"Running away, this time to preserve your own meaningless existence.", 
-	"Is that all you can do? Run on your own two legs that are barely keeping you standing?",
-	"Pathetic."
-	]
+	"Garbage like you deserve to die. No one is beneath you because you are at the bottom.",
+	"Everything else is on top.",
+	"All those who got you where you are are worthless.",
+	"Everyone else deserves to be above you. Everything anyone has done for you is wasted.",
+	"This was a horrible decision.",
+	"Come home.",
+	"Please?"
+]
 var triggered = true   #Used to check if dialog has been triggered
 
 # Declare member variables here. Examples:

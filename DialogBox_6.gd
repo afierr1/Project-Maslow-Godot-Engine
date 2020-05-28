@@ -1,10 +1,7 @@
 extends Node
 var dialog = [
-	"Well...isn't this quite the predicament?", 
-	"Running away, this time to preserve your own meaningless existence.", 
-	"Is that all you can do? Run on your own two legs that are barely keeping you standing?",
-	"Pathetic."
-	]
+	"YOUR GRAVE."
+]
 var triggered = true   #Used to check if dialog has been triggered
 
 # Declare member variables here. Examples:

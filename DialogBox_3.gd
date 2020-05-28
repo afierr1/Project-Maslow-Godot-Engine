@@ -1,5 +1,8 @@
 extends Node
-var dialog = ["Everything is out of your control. You can't change anything.", "Come home with me."]
+var dialog = [
+	"Everything is out of your control. You can't change anything.", 
+	"Your life is dictated by everyone else...but me."
+]
 var triggered = true   #Used to check if dialog has been triggered
 
 # Declare member variables here. Examples:
